@@ -8,6 +8,11 @@
   "dependencies": {
     "express": "3.1.0",
     "jade": "*",
-    "less-middleware": "*"
+    "less-middleware": "*",
+    "passport": "*",
+    "redis": "*",
+    "jasmine-node": "*",
+    "mocha": "*",
+    "uglify-js": "*"
   }
 }
