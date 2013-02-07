@@ -7,7 +7,9 @@ var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
   , http = require('http')
-  , path = require('path');
+  , path = require('path')
+  , redis = require('redis')
+  , db = redis.createClient();
 
 var app = express();
 
@@ -28,6 +30,24 @@ app.configure(function(){
 
 app.configure('development', function(){
   app.use(express.errorHandler());
+});
+
+app.use(function(req, res, next){
+  var ua = req.haeders['user-agent'];
+  db.zadd('online', Date.now(), ua, next);
+});
+
+app.use(function(req, res, next){
+  var min = 60 * 1000;
+  var ago = Date.now() - min;
+  
+  db.zrevrangebyscore('online', '+inf', ago, function(err, users){
+    if(err){
+      return next (err);
+    }
+    req.online = users;
+    next();
+  })
 });
 
 app.get('/', routes.index);
