@@ -1,0 +1,9 @@
+extends layout
+
+block content
+  div(class='span-12')
+    h2 Upload an image
+    form(action='/image/create', method='POST', enctype='multipart/form-data')
+      input(type='text', name='imageTitle')
+      input(type='file', name='displayImage')
+      button(type='submit', id='upload-image')

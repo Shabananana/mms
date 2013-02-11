@@ -1,18 +1,32 @@
+//Models
+
+var Image = Backbone.Model.extend({
+  id: function(){
+    return this.id;
+  },
+  title: function(){
+    return this.title;
+  }
+  url: function(){
+    return this.url;
+  }
+});
+
 var AppRouter = Backbone.Router.extend({
   routes: {
-    'view/:page': 'viewPage',
-    'view/:page/:id': 'viewPage',
-    'view/:image': 'viewImage',
-    'view/:image/:id': 'viewImage',
-    'view/:campaign': 'viewCampaign',
-    'view/:campaign/:id': 'viewCampaign',
-    'view/:template': 'viewTemplate',
-    'view/:template/:id': 'viewTemplate',
+    'page/view': 'viewPage',
+    'page/view/:id': 'viewPage',
+    'image/view': 'viewImage',
+    'image/view/:id': 'viewImage',
+    'campaign/view': 'viewCampaign',
+    'campaign/view/:id': 'viewCampaign',
+    'template/view': 'viewTemplate',
+    'template/view/:id': 'viewTemplate',
     'view': 'viewHub',
-    'create/page': 'createPage',
-    'create/image': 'createImage',
-    'create/campaign': 'createCampaign',
-    'create/template': 'createTemplate',
+    'page/create': 'createPage',
+    'image/create': 'createImage',
+    'campaign/create': 'createCampaign',
+    'template/create': 'createTemplate',
     'create': 'createHub',
     'help': 'help',
     'search/:query': 'search',
@@ -23,7 +37,7 @@ var AppRouter = Backbone.Router.extend({
 // Initiate the router
 var app_router = new AppRouter;
 
-app_router.on('route:viewPage', function(page, id){
+app_router.on('route:viewPage', function(id){
   if(id != null && typeof parseInt(id) === 'number'){
     alert('you chose an id of ' + id);
   } else {
@@ -31,7 +45,7 @@ app_router.on('route:viewPage', function(page, id){
   }
 });
 
-app_router.on('route:viewImage', function(image, id){
+app_router.on('route:viewImage', function(id){
   if(id != null && typeof parseInt(id) === 'number'){
     alert('you chose an id of ' + id);
   } else {
@@ -39,7 +53,7 @@ app_router.on('route:viewImage', function(image, id){
   }
 });
 
-app_router.on('route:viewCampaign', function(campaign, id){
+app_router.on('route:viewCampaign', function(id){
   if(id != null && typeof parseInt(id) === 'number'){
     alert('you chose an id of ' + id);
   } else {
@@ -47,7 +61,7 @@ app_router.on('route:viewCampaign', function(campaign, id){
   }
 });
 
-app_router.on('route:viewTemplate', function(template, id){
+app_router.on('route:viewTemplate', function(id){
   if(id != null && typeof parseInt(id) === 'number'){
     alert('you chose an id of ' + id);
   } else {
@@ -55,7 +69,7 @@ app_router.on('route:viewTemplate', function(template, id){
   }
 });
 
-app_router.on('route:viewImage', function(image, id){
+app_router.on('route:viewImage', function(id){
   if(id != null && typeof parseInt(id) === 'number'){
     alert('you chose an id of ' + id);
   } else {
@@ -72,7 +86,14 @@ app_router.on('route:createPage', function(){
 });
 
 app_router.on('route:createImage', function(){
-  //create a image.
+  $.ajax({
+    type: 'GET',
+    url: '/image',
+    success: function(result){
+      $('#content-wrapper').empty().append(result);
+    },
+    error: function(error){}
+  });
 });
 
 app_router.on('route:createCampaign', function(){

@@ -14,12 +14,12 @@ html
   body
     div(class='navbar navbar-fixed-top')
       div(class='navbar-inner')
-        div(class='container')
+        div(class='container-fluid')
           a(class='btn btn-navbar', data-toggle='collapse', data-target'.nav-collapse')
             span(class='icon-bar')
             span(class='icon-bar')
             span(class='icon-bar')
-          a(class='brand', href='/') Msft
+          a(class='brand', href='#/') Msft
           div(class='nav-collapse collapse')
             ul(class='nav')
               li(class='dropdown')
@@ -50,4 +50,6 @@ html
                 a(href='#/help') Help
               form(class='pull-right navbar-search')
                 input(type='text', class='search-query', placeholder='Find by term')
-    block content
+    section(class='container-fluid', id='content-wrapper')
+      div(class='row-fluid')
+        block content

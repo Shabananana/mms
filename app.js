@@ -6,6 +6,7 @@
 var express = require('express')
   , routes = require('./routes')
   , user = require('./routes/user')
+  , image = require('./routes/image')
   , http = require('http')
   , path = require('path');
 
@@ -30,8 +31,12 @@ app.configure('development', function(){
   app.use(express.errorHandler());
 });
 
+app.use(express.bodyParser({uploadDir:'./uploads'}));
+
 app.get('/', routes.index);
 app.get('/users', user.list);
+app.get('/image', image.createImageForm);
+app.post('/image/create', image.createImagePost);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
