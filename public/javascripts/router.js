@@ -1,17 +1,4 @@
 //Models
-
-var Image = Backbone.Model.extend({
-  id: function(){
-    return this.id;
-  },
-  title: function(){
-    return this.title;
-  }
-  url: function(){
-    return this.url;
-  }
-});
-
 var AppRouter = Backbone.Router.extend({
   routes: {
     'page/view': 'viewPage',

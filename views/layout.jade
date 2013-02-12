@@ -2,12 +2,11 @@ doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='/stylesheets/custom.min.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
     script(src='http://code.jquery.com/jquery-1.9.1.min.js')
     script(src='/javascripts/bootstrap.min.js')
-    script(src='/javascripts/knockout-2.2.1.js')
     script(src='/javascripts/underscore-min.js')
     script(src='/javascripts/backbone-min.js')
     script(src='/javascripts/modernizr.custom.js')
@@ -23,29 +22,29 @@ html
           div(class='nav-collapse collapse')
             ul(class='nav')
               li(class='dropdown')
-                a(class='dropdown-toggle', data-toggle='dropdown', href='#/view') View
+                a(class='dropdown-toggle', data-toggle='dropdown') View
                   b(class='caret')
                 ul(class='dropdown-menu')
                   li
-                    a(href='#/view/images') Images
+                    a(href='#/image/view') Images
                   li
-                    a(href='#/view/pages') Pages
+                    a(href='#/page/view') Pages
                   li
-                    a(href='#/view/campaign') Campaigns
+                    a(href='#/campaign/view') Campaigns
                   li
-                    a(href='#/view/templates') Templates
+                    a(href='#/template/view') Templates
               li(class='dropdown')
-                a(class='dropdown-toggle', data-toggle='dropdown', href='#/create') Create
+                a(class='dropdown-toggle', data-toggle='dropdown') Create
                   b(class='caret')
                 ul(class='dropdown-menu')
                   li
-                    a(href='#/create/image') Image
+                    a(href='#/image/create') Image
                   li
-                    a(href='#/create/page') Page
+                    a(href='#/page/create') Page
                   li
-                    a(href='#/create/campaign') Campaign
+                    a(href='#/campaign/create') Campaign
                   li
-                    a(href='#/create/template') Template
+                    a(href='#/template/create') Template
               li
                 a(href='#/help') Help
               form(class='pull-right navbar-search')

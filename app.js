@@ -36,7 +36,7 @@ app.use(express.bodyParser({uploadDir:'./uploads'}));
 app.get('/', routes.index);
 app.get('/users', user.list);
 app.get('/image', image.createImageForm);
-app.post('/image/create', image.createImagePost);
+app.post('/image/post', image.createImagePost);
 
 http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
