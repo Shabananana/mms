@@ -23,12 +23,18 @@
 .row-fluid {
 
   [class*="span"] {
-    background-color: @pink;
+    background-color: @msftOrange;
     box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8), inset 2px 2px 4px rgba(255,255,255,0.2), inset -2px -2px 4px rgba(0,0,0,0.1);
     -moz-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8), inset 2px 2px 4px rgba(255,255,255,0.2), inset -2px -2px 4px rgba(0,0,0,0.1);
     -webkit-box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8), inset 2px 2px 4px rgba(255,255,255,0.2), inset -2px -2px 4px rgba(0,0,0,0.1);
     .border-radius(2px);
+    
+    &:nth-child(2n) {
+      background-color: @msftBlue;
+    }
   }
+  
+  
   
   > h1, > h2, > h3, > h4, > h5, > h6, > p, >a , > span, > table, > ul, > b, > div {
     padding: 10px;

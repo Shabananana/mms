@@ -25,21 +25,32 @@
 @blueDark:              #0064cd;
 @green:                 #46a546;
 @red:                   #9d261d;
-@yellow:                #ffc40d;
+@yellow:                #D3BB00;
 @orange:                #f89406;
 @pink:                  #c3325f;
 @purple:                #7a43b6;
 
+// MSFT palette
+// -------------------------
+@msftBlue:              #6284A0;
+@msftPurple:            #83316F;
+@msftOrange:            #CB4C2B;
+@msftYellow:            #D3BB03;
+@msftRed:               #982B4A;
+@msftGreen:             #70AD50;
+@msftIvory:             #EFE7C3;
+@msftGrey:              #182023;
+
 
 // Scaffolding
 // -------------------------
-@bodyBackground:        @grayDarker;
-@textColor:             @offWhite;
+@bodyBackground:        @msftGrey;
+@textColor:             @msftIvory;
 
 
 // Links
 // -------------------------
-@linkColor:             #08c;
+@linkColor:             @msftPurple;
 @linkColorHover:        darken(@linkColor, 15%);
 
 
@@ -98,8 +109,8 @@
 @btnSuccessBackground:              #62c462;
 @btnSuccessBackgroundHighlight:     #51a351;
 
-@btnWarningBackground:              lighten(@orange, 15%);
-@btnWarningBackgroundHighlight:     @orange;
+@btnWarningBackground:              lighten(@msftOrange, 15%);
+@btnWarningBackgroundHighlight:     @msftOrange;
 
 @btnDangerBackground:               #ee5f5b;
 @btnDangerBackgroundHighlight:      #bd362f;
@@ -110,7 +121,7 @@
 
 // Forms
 // -------------------------
-@inputBackground:               @white;
+@inputBackground:               @offWhite;
 @inputBorder:                   #ccc;
 @inputBorderRadius:             @baseBorderRadius;
 @inputDisabledBackground:       @grayLighter;
@@ -120,17 +131,17 @@
 
 // Dropdowns
 // -------------------------
-@dropdownBackground:            @white;
+@dropdownBackground:            @msftPurple;
 @dropdownBorder:                rgba(0,0,0,.2);
 @dropdownDividerTop:            #e5e5e5;
-@dropdownDividerBottom:         @white;
+@dropdownDividerBottom:         @msftIvory;
 
-@dropdownLinkColor:             @grayDark;
-@dropdownLinkColorHover:        @white;
-@dropdownLinkColorActive:       @white;
+@dropdownLinkColor:             @msftIvory;
+@dropdownLinkColorHover:        lighten(@msftIvory, 10%);
+@dropdownLinkColorActive:       lighten(@msftIvory, 10%);
 
-@dropdownLinkBackgroundActive:  @linkColor;
-@dropdownLinkBackgroundHover:   @dropdownLinkBackgroundActive;
+@dropdownLinkBackgroundActive:  @msftYellow;
+@dropdownLinkBackgroundHover:   @msftYellow;
 
 
 
@@ -182,18 +193,18 @@
 @navbarCollapseDesktopWidth:      @navbarCollapseWidth + 1;
 
 @navbarHeight:                    40px;
-@navbarBackgroundHighlight:       #ffffff;
+@navbarBackgroundHighlight:       @msftRed;
 @navbarBackground:                darken(@navbarBackgroundHighlight, 5%);
 @navbarBorder:                    darken(@navbarBackground, 12%);
 
-@navbarText:                      #777;
-@navbarLinkColor:                 #777;
-@navbarLinkColorHover:            @grayDark;
-@navbarLinkColorActive:           @gray;
+@navbarText:                      @msftIvory;
+@navbarLinkColor:                 @msftIvory;
+@navbarLinkColorHover:            lighten(@msftIvory, 5%);
+@navbarLinkColorActive:           lighten(@msftIvory, 10%);
 @navbarLinkBackgroundHover:       transparent;
-@navbarLinkBackgroundActive:      darken(@navbarBackground, 5%);
+@navbarLinkBackgroundActive:      @msftGreen;
 
-@navbarBrandColor:                @navbarLinkColor;
+@navbarBrandColor:                @msftYellow;
 
 // Inverted navbar
 @navbarInverseBackground:                #111111;
