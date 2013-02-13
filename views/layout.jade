@@ -2,7 +2,6 @@ doctype 5
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/custom.min.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/bootstrap-responsive.min.css')
     script(src='http://code.jquery.com/jquery-1.9.1.min.js')
@@ -10,6 +9,7 @@ html
     script(src='/javascripts/underscore-min.js')
     script(src='/javascripts/backbone-min.js')
     script(src='/javascripts/modernizr.custom.js')
+    script(src='javascripts/router.js')
   body
     div(class='navbar navbar-fixed-top')
       div(class='navbar-inner')
@@ -51,4 +51,8 @@ html
                 input(type='text', class='search-query', placeholder='Find by term')
     section(class='container-fluid', id='content-wrapper')
       div(class='row-fluid')
-        block content
+        div(class='span2', id='left-column')
+          h2 hey there, i'm the left column!!!   
+        div(class='span10', id='right-column')
+          div(class='row-fluid')
+            block content
