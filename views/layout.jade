@@ -48,6 +48,8 @@ html
                     a(href='#/template/create') Template
               li
                 a(href='#/help') Help
+              li(class='pull-right')
+                a(href='#/login') Login
               form(class='pull-right navbar-search')
                 input(type='text', class='search-query', placeholder='Find by term')
     section(class='container-fluid', id='content-wrapper')
@@ -56,4 +58,13 @@ html
           h2 hey there, i'm the left column!!!   
         div(class='span10', id='right-column')
           div(class='row-fluid')
+            form(action='/login', method='post')
+              div
+                label(for='username') Username
+                input(type='text', name='username')
+              div
+                label(for='password') Password
+                input(type='password', name='password')
+              div
+                input(type='submit', value='Log In')
             block content
