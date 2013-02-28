@@ -10,7 +10,14 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , passport = require('passport')
-  , LocalStrategy = require('passport-local').Strategy;
+  , LocalStrategy = require('passport-local').Strategy
+  ,mongo = require('mongoskin')
+  ,config = require('./config/config');
+  
+var conn = mongo.db(config.connectionString);
+
+var test = conn.collection('users').find();
+
 
 var app = express();
 
